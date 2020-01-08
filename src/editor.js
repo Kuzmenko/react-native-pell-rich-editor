@@ -76,7 +76,7 @@ const HTML = `
                     return exec('underline');
                 }
             },
-            strikethrough: {
+            strikeThrough: {
                 state: function() {
                     return queryCommandState('strikeThrough');
                 },
@@ -139,6 +139,16 @@ const HTML = `
             image: {
                 result: function(url) {
                     if (url) { exec('insertHTML', "<br><div><img src='"+ url +"'/></div><br>");}
+                }
+            },
+            indent: {
+                result: function() {
+                    return exec('indent');
+                }
+            },
+            outdent: {
+                result: function() {
+                    return exec('outdent');
                 }
             },
             content: {
